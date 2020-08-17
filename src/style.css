@@ -5,3 +5,53 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: rgb(93, 184, 90);
+}
+
+input {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.search {
+  margin: 10px 0;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.temp-container {
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+}
+
+.temp-value {
+  font-size: 5rem;
+}
+
+.selector {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.celsius:hover {
+  background-color: gray;
+}
+
+.farenheit:hover {
+  background-color: gray;
+}
+
+.location-container {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 2rem;
+}
