@@ -1,8 +1,8 @@
 class Weather {
-  constructor(city, country, expectedDate, wind, humidity, temperature, icon) {
+  constructor(city, country, expected, wind, humidity, temperature, icon) {
     this.city = city;
     this.country = country;
-    this.expectedDate = expectedDate;
+    this.expected = expected;
     this.wind = wind;
     this.humidity = humidity;
     this.temperature = temperature;
