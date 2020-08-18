@@ -31,9 +31,9 @@ const appInterface = (() => {
   inputValue.addEventListener('keypress', (e) => {
     if (e.code === 'Enter' || e.code === 'NumpadEnter') {
       if (inputValue.value.trim() === '') {
-        errorMessage.classList.toggle('d-none');
+        errorMessage.classList = 'd-inline';
       } else {
-        errorMessage.classList.toggle('d-none');
+        errorMessage.classList = 'd-none';
         Api.weatherQuery(inputValue.value).then((response) => {
           renderHTML(response);
 
