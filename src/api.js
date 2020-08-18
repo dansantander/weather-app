@@ -1,7 +1,7 @@
 import Weather from './classes/weather';
 
 const getWeather = (() => {
-  const weatherResult = () => new Promise((resolve, reject) => {
+  const weatherQuery = () => new Promise((resolve, reject) => {
     fetch('http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=d5c069562c9fcd7849eca2747d7a7982',
       { mode: 'cors' }).then(response => response.json()).then((response) => {
       if (response) {
@@ -16,7 +16,7 @@ const getWeather = (() => {
       }
     });
   });
-  return { weatherResult };
+  return { weatherQuery  };
 })();
 
 export default getWeather;
