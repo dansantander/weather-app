@@ -53,6 +53,16 @@ header {
   margin: 10px 0;
 }
 
+#err-message,
+#err-message2 {
+  margin-top: 1rem;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #bb3737;
+  color: white;
+}
+
 .main-container {
   width: 80%;
   margin: 0 auto;
@@ -86,10 +96,12 @@ header {
 
 .celsius:hover {
   background-color: #2cb5e8;
+  cursor: pointer;
 }
 
 .farenheit:hover {
   background-color: #2cb5e8;
+  cursor: pointer;
 }
 
 .location-container {

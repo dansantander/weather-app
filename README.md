@@ -1,7 +1,7 @@
 # weather-app
 A Javascript project to create a weather app using API's, fetch, async and promises.
 
-![screenshot](./src/img/todocover.png)
+![screenshot](./src/img/weathercover.png)
 
 ## Table of Contents
 

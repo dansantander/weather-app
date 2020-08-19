@@ -15,11 +15,11 @@ const appInterface = (() => {
 
   const renderHTML = (response) => {
     city.innerHTML = response.city;
-    country.innerHTML = response.country;
+    country.innerHTML = `<i class="fas fa-globe-americas"></i> ${response.country}`;
     tempValue.innerHTML = `${Math.round(response.temperature)}°`;
     tempDescription.innerHTML = response.expected;
-    windValue.innerHTML = `Wind: ${response.wind}`;
-    humidityValue.innerHTML = `Humidity: ${response.humidity}`;
+    windValue.innerHTML = `<i class="fas fa-wind"></i> Wind: ${response.wind} m/s`;
+    humidityValue.innerHTML = `<i class="fas fa-tint"></i> Humidity: ${response.humidity}%`;
     iconValue.src = `http://openweathermap.org/img/wn/${response.icon}@4x.png`;
   };
 
@@ -32,18 +32,19 @@ const appInterface = (() => {
     inputValue.addEventListener('keypress', (e) => {
       if (e.code === 'Enter' || e.code === 'NumpadEnter') {
         if (inputValue.value.trim() === '') {
-          errorMessage.classList = 'd-inline';
+          errorMessage.innerHTML = 'Field must not be empty';
+          errorMessage.classList = 'd-block';
         } else {
           errorMessage.classList = 'd-none';
           Api.weatherQuery(inputValue.value).then((response) => {
             renderHTML(response);
 
             farenheitSelector.addEventListener('click', () => {
-              tempValue.innerHTML = switchToFarenheit(response.temperature);
+              tempValue.innerHTML = `${switchToFarenheit(response.temperature)}°`;
             });
 
             celsiusSelector.addEventListener('click', () => {
-              tempValue.innerHTML = Math.round(response.temperature);
+              tempValue.innerHTML = `${Math.round(response.temperature)}°`;
             });
           });
         }
