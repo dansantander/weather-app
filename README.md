@@ -20,7 +20,7 @@ A Javascript project to create a weather app using API's, fetch, async and promi
 
 ## Demo
 
-[Live Demo](https://raw.githack.com/dansantander/todo-list/feature-todo/dist/index.html)
+[Live Demo](https://raw.githack.com/dansantander/weather-app/feature-weather/dist/index.html)
 
 ## Installation
 
