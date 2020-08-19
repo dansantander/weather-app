@@ -28,26 +28,30 @@ const appInterface = (() => {
     return farenheitResult;
   };
 
-  inputValue.addEventListener('keypress', (e) => {
-    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
-      if (inputValue.value.trim() === '') {
-        errorMessage.classList = 'd-inline';
-      } else {
-        errorMessage.classList = 'd-none';
-        Api.weatherQuery(inputValue.value).then((response) => {
-          renderHTML(response);
+  const setListener = () => {
+    inputValue.addEventListener('keypress', (e) => {
+      if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+        if (inputValue.value.trim() === '') {
+          errorMessage.classList = 'd-inline';
+        } else {
+          errorMessage.classList = 'd-none';
+          Api.weatherQuery(inputValue.value).then((response) => {
+            renderHTML(response);
 
-          farenheitSelector.addEventListener('click', () => {
-            tempValue.innerHTML = switchToFarenheit(response.temperature);
-          });
+            farenheitSelector.addEventListener('click', () => {
+              tempValue.innerHTML = switchToFarenheit(response.temperature);
+            });
 
-          celsiusSelector.addEventListener('click', () => {
-            tempValue.innerHTML = Math.round(response.temperature);
+            celsiusSelector.addEventListener('click', () => {
+              tempValue.innerHTML = Math.round(response.temperature);
+            });
           });
-        });
+        }
       }
-    }
-  });
+    });
+  };
+
+  return { setListener };
 })();
 
 export default appInterface;
