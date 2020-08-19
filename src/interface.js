@@ -6,7 +6,7 @@ const appInterface = (() => {
   const city = document.querySelector('.city');
   const country = document.querySelector('.country');
   const tempValue = document.querySelector('.temp-value');
-  const tempDescription = document.querySelector('.temp-description p');
+  const tempDescription = document.querySelector('.description');
   const windValue = document.querySelector('.wind');
   const humidityValue = document.querySelector('.humidity');
   const iconValue = document.getElementById('icon');
@@ -16,11 +16,11 @@ const appInterface = (() => {
   const renderHTML = (response) => {
     city.innerHTML = response.city;
     country.innerHTML = response.country;
-    tempValue.innerHTML = Math.round(response.temperature);
+    tempValue.innerHTML = `${Math.round(response.temperature)}°`;
     tempDescription.innerHTML = response.expected;
-    windValue.innerHTML = response.wind;
-    humidityValue.innerHTML = response.humidity;
-    iconValue.src = `http://openweathermap.org/img/wn/${response.icon}@2x.png`;
+    windValue.innerHTML = `Wind: ${response.wind}`;
+    humidityValue.innerHTML = `Humidity: ${response.humidity}`;
+    iconValue.src = `http://openweathermap.org/img/wn/${response.icon}@4x.png`;
   };
 
   const switchToFarenheit = (celsiusDegrees) => {
